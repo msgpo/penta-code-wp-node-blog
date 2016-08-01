@@ -15,6 +15,7 @@ config       = require('./config'),
 utils        = require('./lib/utils'),
 port         = (process.env.PORT || 8000);
 
+var posts = require('./middleware/posts');
 
 //Comment out the line below if you want to enable cluster support.
 setupServer();
@@ -106,6 +107,7 @@ function setupServer (worker) {
     // The exposeTemplates() method makes the Handlebars templates that are inside /shared/templates/
     // available to the client.
     router.get('/', [ middleware.exposeTemplates(), routes.render('home') ]);
+    router.get('/blog', [ middleware.exposeTemplates(), posts, routes.render('blog')]);
 
     // Error handling middleware
     app.use(function(req, res, next){
