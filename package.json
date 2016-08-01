@@ -17,7 +17,9 @@
     "express-state": "latest",
     "handlebars": "^2.0.0-alpha.4",
     "lodash": "^4.14.1",
+    "lodash.get": "^4.4.1",
     "morgan": "^1.2.2",
+    "wordpress-rest-api": "^0.8.0",
     "ypromise": "^0.2.3"
   },
   "devDependencies": {
